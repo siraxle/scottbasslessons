@@ -20,6 +20,7 @@ public class DriverChrome implements Driver {
     desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
     System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
     WebDriver driver = new ChromeDriver(desiredCapabilities);
+    driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     logger.info("Driver: {}", driver);
     return driver;
